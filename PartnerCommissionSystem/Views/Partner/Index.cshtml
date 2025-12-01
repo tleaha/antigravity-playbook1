@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Partner Dashboard";
+}
+
+<div class="container mt-5">
+    <h1>Partner Dashboard</h1>
+    <p>Welcome, Partner!</p>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Manage Referral Codes</h5>
+                    <a asp-action="ReferralCodes" class="btn btn-primary">Go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Commission History</h5>
+                    <a asp-action="Commissions" class="btn btn-primary">View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

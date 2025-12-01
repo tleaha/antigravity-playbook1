@@ -1,0 +1,24 @@
+{
+  "name": "partner-commission-system",
+  "version": "1.0.0",
+  "description": "Frontend for Partner Commission System",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "watch": "webpack --watch --mode development"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "style-loader": "^3.3.3",
+    "css-loader": "^6.8.1",
+    "sass": "^1.66.1",
+    "sass-loader": "^13.3.2"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.1",
+    "@popperjs/core": "^2.11.8"
+  }
+}

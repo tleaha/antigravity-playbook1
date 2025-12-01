@@ -1,0 +1,32 @@
+@model PartnerCommissionSystem.Models.Accommodation
+
+@{
+    ViewData["Title"] = "Add Accommodation";
+}
+
+<div class="container mt-5">
+    <h2>Add Accommodation</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="CreateAccommodation">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ReferralCode" class="form-label">Referral Code (Optional)</label>
+                    <input asp-for="ReferralCode" class="form-control" />
+                    <span asp-validation-for="ReferralCode" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Create</button>
+                <a asp-action="Accommodations" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

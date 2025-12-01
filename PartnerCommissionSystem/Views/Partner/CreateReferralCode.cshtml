@@ -1,0 +1,27 @@
+@model PartnerCommissionSystem.Models.ReferralCode
+
+@{
+    ViewData["Title"] = "Create Referral Code";
+}
+
+<div class="container mt-5">
+    <h2>Create Referral Code</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="CreateReferralCode">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="mb-3">
+                    <label asp-for="Code" class="form-label"></label>
+                    <input asp-for="Code" class="form-control" />
+                    <span asp-validation-for="Code" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Create</button>
+                <a asp-action="ReferralCodes" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

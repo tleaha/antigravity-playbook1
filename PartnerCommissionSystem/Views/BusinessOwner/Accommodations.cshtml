@@ -1,0 +1,38 @@
+@model IEnumerable<PartnerCommissionSystem.Models.Accommodation>
+
+@{
+    ViewData["Title"] = "My Accommodations";
+}
+
+<div class="container mt-5">
+    <h2>My Accommodations</h2>
+    <p>
+        <a asp-action="CreateAccommodation" class="btn btn-primary">Add New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Referral Code Used</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.ReferralCode</td>
+                    <td>
+                        <form asp-action="Book" method="post" class="d-inline">
+                            <input type="hidden" name="accommodationId" value="@item.Id" />
+                            <input type="number" name="amount" placeholder="Amount" required min="1" style="width: 100px;" />
+                            <button type="submit" class="btn btn-success btn-sm">Simulate Booking</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-action="Index" class="btn btn-secondary">Back to Dashboard</a>
+</div>
